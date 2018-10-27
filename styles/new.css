@@ -1,0 +1,67 @@
+html {
+  box-sizing: border-box;
+}
+body{
+font-family: sans-serif;
+background: #ADD8E6;
+  margin:0;
+  padding: 0;
+}
+#container{
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+#containerTwo {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 2rem;
+}
+header {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+}
+article {
+padding-left: 5rem;
+padding-right: 5rem;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+}
+@media screen and (max-width: 670px) {
+  #container {
+    padding-left: 1rem;
+    width: 100%;
+  }
+  #containerTwo {
+    padding-left: 1rem;
+    width: 100%;
+  }
+  article {
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 375px){
+  header {
+    margin: .25rem;
+    padding-left: 5rem;
+    padding-top: 0;
+    padding-right: 0;
+  }
+  article {
+    margin:0;
+    padding-left: 3rem;
+    padding-right: 5rem;
+    width: 100%;
+  }
+  #container {
+    padding-left: 3rem;
+    padding-right: 5rem;
+    width: 100%;
+  }
+  #containerTwo {
+    padding-left: 3rem;
+    padding-right: 5rem;
+    width: 100%;
+}
+}

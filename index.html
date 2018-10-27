@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Life Expectancy in the Caribbean</title>
+  <link rel="stylesheet" href="styles/new.css">
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/data.js"></script>
+  <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+
+
+</head>
+<body>
+  <header>
+  <h1>Life Expectancy in the Caribbean</h1>
+  <h2> By Courtney Theophin</h2>
+</header>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto" ></div>
+<article>
+<p> We take a look at the life expectancy for certain Caribbean countries, using the data from the World Bank. These statistics are a combined life expectancy both men and women in 2016. Cuba has the highest life expectancy out of all the countries shown, with 79.742 years of age. Haiti has the lowest with a rate of 63.33 years. The average life expectancy for the entire Caribbean and Latin America is 75.54 years of age. In the chart below you'll see the life expectancy of the Caribbean countries from 1980 to 2016.</p>
+</article>
+<div id="containerTwo"></div>
+<script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Life Expectancy in the Caribbean'
+      },
+      subtitle: {
+          text: 'Source: <a href="https://data.worldbank.org">Data.Worldbank.org</a>'
+      },
+      xAxis: {
+          type: 'category'
+      },
+      yAxis: {
+          title: {
+              text: 'Life Expectancy as of 2016 (in years)'
+          }
+
+      },
+      legend: {
+          enabled: false
+      },
+      plotOptions: {
+          series: {
+              borderWidth: 0,
+              dataLabels: {
+                  enabled: true,
+                  format: '{point.y:.1f}'
+              }
+          }
+      },
+
+      tooltip: {
+          headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+          pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f} years old<br/>'
+      },
+
+      "series": [
+          {
+              "name": "Life Expectancy",
+              "colorByPoint": true,
+              "data": [
+                  {
+                      "name": "Antigua and Barbuda",
+                      "y": 76.36,
+                      "drilldown": "Antigua and Barbuda"
+                  },
+                  {
+                      "name": "The Bahamas",
+                      "y": 75.67,
+                      "drilldown": "The Bahamas"
+                  },
+                  {
+                      "name": "Cuba",
+                      "y": 79.74,
+                      "drilldown": "Cuba"
+                  },
+                  {
+                      "name": "Dominican Republic",
+                      "y": 73.86,
+                      "drilldown": "Dominican Republic"
+                  },
+                  {
+                      "name": "Haiti",
+                      "y": 63.33,
+                      "drilldown": "Haiti"
+                  },
+                  {
+                      "name": "Jamaica",
+                      "y": 75.97,
+                      "drilldown": "Jamaica"
+                  },
+                  {
+                      "name": "Trinidad and Tabago",
+                      "y": 70.67,
+                      "drilldown": "Trinidad and Tabago",
+                  }
+              ]
+          }
+      ],
+  });
+</script>
+<script>
+Highcharts.chart('containerTwo', {
+
+  title: {
+    text: 'Life Expectancy in the Caribbean, 1980-2016'
+  },
+
+  subtitle: {
+    text: 'Source: <a href="https://data.worldbank.org">Data.Worldbank.org</a>'
+  },
+
+  yAxis: {
+    title: {
+      text: 'Life Expectancy'
+    }
+  },
+  legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle'
+  },
+  xAxis:{
+  		categories: ['1980', '1990','2000','2010','2016']
+  },
+  plotOptions: {
+    series: {
+      label: {
+        connectorAllowed: false
+      }
+
+    }
+  },
+
+  series: [{
+    name: 'Antigua and Barbados',
+    data: [68.873,71.351, 73.541, 75.412, 76.364]
+  }, {
+    name: 'The Bahamas',
+    data: [68.524, 70.705, 72.37, 75.412, 75.675]
+  }, {
+    name: 'Cuba',
+    data: [73.803,74.644,76.658, 78.959, 79.742]
+  }, {
+    name: 'Dominican Republic',
+    data: [62.97, 67.866, 70.568, 72.702, 73.861]
+  }, {
+    name: 'Haiti',
+    data: [50.85, 54.609, 57.716, 61.296, 63.33]
+  }, {
+    name: 'Jamaica',
+    data: [71.509,72.065,72.327,74.883, 75.97 ]
+  }, {
+    name: 'Trinidad and Tobago',
+    data: [67.022, 68.007, 68.532, 69.756,70.673]
+  }, ],
+
+  responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 500
+      },
+      chartOptions: {
+        legend: {
+          layout: 'horizontal',
+          align: 'center',
+          verticalAlign: 'bottom'
+        }
+      }
+    }]
+  }
+
+});
+</script>
+</body>
+</html>
